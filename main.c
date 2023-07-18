@@ -15,6 +15,17 @@ struct Fila
     int tamanho;
 };
 
+struct Fila* criar()
+{
+    struct Fila* nova_fila = (struct Fila*) malloc(sizeof(struct Fila));
+    if(nova_fila != NULL)
+    {
+        nova_fila->inicio = NULL;
+        nova_fila->fim = NULL;
+        nova_fila->tamanho = 0;
+    }
+    return nova_fila;
+}
 
 
 
