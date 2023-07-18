@@ -75,6 +75,13 @@ int tamanho(struct Fila* f)
     return f->tamanho;
 }
 
+int inicio(struct Fila* f)
+{
+    assert(f != NULL);
+    assert(f->inicio != NULL);
+    return f->inicio->info;
+}
+
 int main(int argc, char const *argv[])
 {
     
