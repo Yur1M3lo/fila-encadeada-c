@@ -63,6 +63,12 @@ int desenfileirar(struct Fila* f)
 
 }
 
+bool vazia(struct Fila* f)
+{
+    assert(f != NULL);
+    return (f->inicio == NULL);
+}
+
 int main(int argc, char const *argv[])
 {
     
