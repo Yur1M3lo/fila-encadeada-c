@@ -82,6 +82,16 @@ int inicio(struct Fila* f)
     return f->inicio->info;
 }
 
+void liberar(struct Fila* f)
+{
+    assert(f != NULL);
+    while(f->inicio != NULL)
+    {
+        desenfileirar(f);
+    }
+    free(f);
+}
+
 int main(int argc, char const *argv[])
 {
     
