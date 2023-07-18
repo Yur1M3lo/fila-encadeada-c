@@ -27,6 +27,27 @@ struct Fila* criar()
     return nova_fila;
 }
 
+void enfileirar(struct Fila* f, int item)
+{
+    assert(f != NULL);
+    struct No* novo_no = (struct No*) malloc(sizeof(struct No));
+    if(novo_no != NULL)
+    {
+        novo_no->info = item;
+        novo_no->proximo = NULL;
+
+        if(f->fim != NULL)
+        {
+            f->fim->proximo = novo_no;    
+        } else 
+        {
+            f->inicio = novo_no;
+        }
+        f->fim = novo_no;
+        f->tamanho++;
+    }
+
+}
 
 
 int main(int argc, char const *argv[])
