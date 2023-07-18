@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <assert.h>
 
 struct No
 {
@@ -55,11 +56,14 @@ int desenfileirar(struct Fila* f)
     assert(f->inicio != NULL);
     struct No* aux = f->inicio;
     int elemento = aux->info;
-    f->inicio = aux->info;
+    f->inicio = aux->proximo;
     if(f->inicio == NULL)
     {
         f->fim = NULL;
     }
+    f->tamanho--;
+    free(aux);
+    return elemento;
 
 }
 
@@ -94,6 +98,11 @@ void liberar(struct Fila* f)
 
 int main(int argc, char const *argv[])
 {
+    struct Fila* minha_fila = criar();
+    enfileirar(minha_fila, 1);
+    enfileirar(minha_fila, 2);
+    enfileirar(minha_fila, 3);
+    printf("Tamanho: %d ", tamanho(minha_fila));
     
     return 0;
 }
