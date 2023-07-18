@@ -69,6 +69,12 @@ bool vazia(struct Fila* f)
     return (f->inicio == NULL);
 }
 
+int tamanho(struct Fila* f)
+{
+    assert(f != NULL);
+    return f->tamanho;
+}
+
 int main(int argc, char const *argv[])
 {
     
