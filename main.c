@@ -49,6 +49,19 @@ void enfileirar(struct Fila* f, int item)
 
 }
 
+int desenfileirar(struct Fila* f)
+{
+    assert(f != NULL);
+    assert(f->inicio != NULL);
+    struct No* aux = f->inicio;
+    int elemento = aux->info;
+    f->inicio = aux->info;
+    if(f->inicio == NULL)
+    {
+        f->fim = NULL;
+    }
+
+}
 
 int main(int argc, char const *argv[])
 {
